@@ -1,20 +1,30 @@
 package ru.ifmo.ctddev.latyshev.analyzer;
 
+import com.github.javaparser.symbolsolver.javaparsermodel.JavaParserFacade;
+import com.github.javaparser.symbolsolver.model.resolution.TypeSolver;
+import com.github.javaparser.symbolsolver.resolution.typesolvers.CombinedTypeSolver;
+import com.github.javaparser.symbolsolver.resolution.typesolvers.JavaParserTypeSolver;
+import com.github.javaparser.symbolsolver.resolution.typesolvers.ReflectionTypeSolver;
+
 import java.io.IOException;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.List;
 
 public class Main {
+    private static Path src = Paths.get("src/test/java");
+    private static TypeSolver typeSolver = new CombinedTypeSolver(
+        new ReflectionTypeSolver(),
+        new JavaParserTypeSolver(src)
+    );
+    private static JavaParserFacade parserFacade = JavaParserFacade.get(typeSolver);
+
     public static void main(String[] args) throws IOException {
-//        var src = Paths.get("C:\\programming\\study\\10term\\verifiers\\guava");
-//        var src = Paths.get("C:\\programming\\study\\10term\\verifiers\\elasticsearch");
-        var src = Paths.get("C:\\programming\\study\\10term\\verifiers\\analyzer\\src\\test\\java");
-//        var src = Paths.get("C:\\programming\\study\\10term\\verifiers\\spring-framework");
         SmellPrinter smellPrinter = new SimpleSmellPrinter();
         final List<Analyzer> analyzers = List.of(
-                new EquivalentIfBranchesAnalyzer(smellPrinter),
-                new ImportAnalyzer(smellPrinter)
+            new ImportAnalyzer(smellPrinter),
+            new EquivalentIfBranchesAnalyzer(smellPrinter),
+            new SynchronizationAnalyzer(smellPrinter, parserFacade)
         );
         Files.walkFileTree(src, new SimpleFileVisitor<>(){
             @Override
