@@ -57,9 +57,5 @@ public class Analyzer {
     }
 
     void analyzeNode(Node node) {
-        node.getChildNodes().forEach(cnode -> {
-            smellResult.setNode(cnode);
-            analyzeNode(cnode);
-        });
     }
 }

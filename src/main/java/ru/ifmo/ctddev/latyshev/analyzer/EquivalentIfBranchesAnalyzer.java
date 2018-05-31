@@ -19,6 +19,5 @@ public class EquivalentIfBranchesAnalyzer extends Analyzer {
                 }
             }
         }
-        super.analyzeNode(node);
     }
 }

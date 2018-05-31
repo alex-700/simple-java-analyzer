@@ -11,7 +11,7 @@ public class SimpleSmellPrinter implements SmellPrinter {
         if (smellResult.getMd() != null)
             System.out.println("Method: " + smellResult.getMd().getDeclarationAsString());
         if (smellResult.getNode() != null) {
-            System.out.println("Range: " + smellResult.getNode().getRange());
+            System.out.println("Range: " + smellResult.getNode().getRange().get());
             System.out.println("Code: " + smellResult.getNode());
         }
         System.out.println("Verdict: " + message);

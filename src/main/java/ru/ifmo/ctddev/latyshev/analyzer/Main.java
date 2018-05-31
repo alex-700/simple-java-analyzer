@@ -7,13 +7,14 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        var src = Paths.get("C:\\programming\\study\\10term\\verifiers\\guava");
+//        var src = Paths.get("C:\\programming\\study\\10term\\verifiers\\guava");
 //        var src = Paths.get("C:\\programming\\study\\10term\\verifiers\\elasticsearch");
-//        var src = Paths.get("C:\\programming\\study\\10term\\verifiers\\analyzer\\src\\test\\java");
+        var src = Paths.get("C:\\programming\\study\\10term\\verifiers\\analyzer\\src\\test\\java");
 //        var src = Paths.get("C:\\programming\\study\\10term\\verifiers\\spring-framework");
         SmellPrinter smellPrinter = new SimpleSmellPrinter();
         final List<Analyzer> analyzers = List.of(
-                new EquivalentIfBranchesAnalyzer(smellPrinter)
+                new EquivalentIfBranchesAnalyzer(smellPrinter),
+                new ImportAnalyzer(smellPrinter)
         );
         Files.walkFileTree(src, new SimpleFileVisitor<>(){
             @Override
@@ -25,5 +26,4 @@ public class Main {
             }
         });
     }
-
 }
