@@ -42,6 +42,8 @@ public class UnusedVariableAnalyzer extends Analyzer {
                 }
             }
             declarations.removeAll(md.getParameters());
+        } else {
+          super.analyzeMethod(md);
         }
     }
 
