@@ -1,6 +1,4 @@
 import java.util.Scanner;
-import java.util.Scanner;
-import java.util.function.Function;
 
 public class Test {
     public static void main(String[] args) {
@@ -21,9 +19,9 @@ public class Test {
             System.out.println("test");
         }
     }
-  
+
     private static Object b = new Object();
-  
+
     public static void main3(String[] args) {
         synchronized (b) {
             System.out.println("test");
@@ -41,8 +39,14 @@ public class Test {
     
     public int foo(int x, int y) {
         class B {
-            private int bar(int a, int b) {
+          int bar(int a, int b) {
             return x + a;
+          }
+        }
+        class C extends B {
+          @Override
+          int bar(int c, int d) {
+            return x;
           }
         }
         return y;

@@ -4,6 +4,8 @@ import com.github.javaparser.ast.Node;
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.body.Parameter;
+import com.github.javaparser.ast.expr.AnnotationExpr;
+import com.github.javaparser.ast.expr.MarkerAnnotationExpr;
 import com.github.javaparser.ast.expr.NameExpr;
 import com.github.javaparser.symbolsolver.javaparsermodel.JavaParserFacade;
 import com.github.javaparser.symbolsolver.javaparsermodel.declarations.JavaParserParameterDeclaration;
@@ -31,7 +33,7 @@ public class UnusedVariableAnalyzer extends Analyzer {
 
   @Override
     void analyzeMethod(MethodDeclaration md) {
-        if (md.getBody().isPresent()) {
+        if (md.getBody().isPresent() && !md.getAnnotations().contains(new MarkerAnnotationExpr("Override"))) {
             declarations.addAll(md.getParameters());
             super.analyzeMethod(md);
             for (var declaration : declarations) {
