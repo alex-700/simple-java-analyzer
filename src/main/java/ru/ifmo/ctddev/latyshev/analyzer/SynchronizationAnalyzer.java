@@ -34,10 +34,10 @@ public class SynchronizationAnalyzer extends Analyzer {
                     smellPrinter.print(smellResult, "Synchronizing on a local variable " + valueDeclaration.getName());
                 }
             } else {
-                System.err.println("Could not solve declaration in " + exp);
+//                System.err.println(this.getClass().getSimpleName() + " : Could not solve declaration in " + exp);
             }
         } catch (Exception e) {
-            System.err.println("Could not solve declaration in " + exp);
+//            System.err.println(this.getClass().getSimpleName() + " : Could not solve declaration in " + exp);
         }
     }
     super.analyzeNode(node);

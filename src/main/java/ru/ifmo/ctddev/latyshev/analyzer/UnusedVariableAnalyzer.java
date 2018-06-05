@@ -5,6 +5,7 @@ import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.body.Parameter;
 import com.github.javaparser.ast.expr.NameExpr;
+import com.github.javaparser.ast.stmt.ThrowStmt;
 import com.github.javaparser.symbolsolver.javaparsermodel.JavaParserFacade;
 import com.github.javaparser.symbolsolver.javaparsermodel.declarations.JavaParserParameterDeclaration;
 
@@ -25,18 +26,32 @@ public class UnusedVariableAnalyzer extends Analyzer {
     void analyzeFile(Path file) {
         super.analyzeFile(file);
         for (var declaration : declarations) {
-            smellPrinter.print(smellResult, declaration + " is unused");
+            smellResult.setNode(declaration);
+            smellPrinter.print(smellResult, declaration.getNameAsString() + " is unused");
         }
     }
 
   @Override
     void analyzeMethod(MethodDeclaration md) {
-        if (md.getBody().isPresent()) {
+        if (md.getBody().isPresent()
+                && !md.getAnnotationByName("Override").isPresent()) {
+            if (md.getBody().isPresent() && md.getBody().get().getStatements().stream().findFirst().isPresent()) {
+                Node node = md.getBody().get().getStatements().stream().findFirst().get();
+                if (node instanceof ThrowStmt) return;
+            }
             declarations.addAll(md.getParameters());
             super.analyzeMethod(md);
             for (var declaration : declarations) {
                 if (md.getParameters().contains(declaration)) {
-                    smellPrinter.print(smellResult, declaration + " is unused");
+                    var suppressWarningOpt = declaration.getAnnotationByName("SuppressWarnings");
+                    if (suppressWarningOpt.isPresent()) {
+                        var suppressWarning = suppressWarningOpt.get();
+                        if (suppressWarning.toString().contains("unused")) {
+                            continue;
+                        }
+                    }
+                    smellResult.setNode(declaration);
+                    smellPrinter.print(smellResult, declaration.getNameAsString() + " is unused");
                 }
             }
             declarations.removeAll(md.getParameters());
@@ -56,6 +71,7 @@ public class UnusedVariableAnalyzer extends Analyzer {
                     }
                 }
             } catch (Exception e) {
+//                System.err.println(this.getClass().getSimpleName() + " : Could not solve declaration in " + nameExpr);
             }
         } else if (node instanceof ClassOrInterfaceDeclaration) {
             analyzeClassOrInterfaceDeclaration((ClassOrInterfaceDeclaration) node);
