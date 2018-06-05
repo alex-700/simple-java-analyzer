@@ -18,21 +18,25 @@ public class SynchronizationAnalyzer extends Analyzer {
     if (node instanceof SynchronizedStmt) {
         var stmt = (SynchronizedStmt) node;
         var exp = stmt.getExpression();
-        var symbolReference = parserFacade.solve(stmt.getExpression());
-        if (symbolReference.isSolved()) {
-            var valueDeclaration = symbolReference.getCorrespondingDeclaration();
-            if (valueDeclaration.isField()) {
-                var field = valueDeclaration.asField();
-                if (field instanceof JavaParserFieldDeclaration) {
-                    var declaration = (JavaParserFieldDeclaration) field;
-                    if (!declaration.getWrappedNode().isFinal()) {
-                        smellPrinter.print(smellResult, "Synchronizing on a non-final variable " + valueDeclaration.getName());
+        try {
+            var symbolReference = parserFacade.solve(stmt.getExpression());
+            if (symbolReference.isSolved()) {
+                var valueDeclaration = symbolReference.getCorrespondingDeclaration();
+                if (valueDeclaration.isField()) {
+                    var field = valueDeclaration.asField();
+                    if (field instanceof JavaParserFieldDeclaration) {
+                        var declaration = (JavaParserFieldDeclaration) field;
+                        if (!declaration.getWrappedNode().isFinal()) {
+                            smellPrinter.print(smellResult, "Synchronizing on a non-final variable " + valueDeclaration.getName());
+                        }
                     }
+                } else {
+                    smellPrinter.print(smellResult, "Synchronizing on a local variable " + valueDeclaration.getName());
                 }
             } else {
-                smellPrinter.print(smellResult, "Synchronizing on a local variable " + valueDeclaration.getName());
+                System.err.println("Could not solve declaration in " + exp);
             }
-        } else {
+        } catch (Exception e) {
             System.err.println("Could not solve declaration in " + exp);
         }
     }

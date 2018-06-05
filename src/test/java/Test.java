@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.Scanner;
+import java.util.function.Function;
 
 public class Test {
     public static void main(String[] args) {
@@ -27,5 +28,14 @@ public class Test {
       synchronized (b) {
           System.out.println("test");
       }
+  }
+
+  public static int unused(int a) {
+      return 1;
+  }
+
+  public static int unused(int a, int b) {
+      int x = unused(a);
+      return unused(a);
   }
 }
