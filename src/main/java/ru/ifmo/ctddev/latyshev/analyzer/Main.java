@@ -42,7 +42,8 @@ public class Main {
         final List<Analyzer> analyzers = List.of(
             new ImportAnalyzer(smellPrinter),
             new EquivalentIfBranchesAnalyzer(smellPrinter),
-            new SynchronizationAnalyzer(smellPrinter, parserFacade)
+            new SynchronizationAnalyzer(smellPrinter, parserFacade),
+            new UnusedVariableAnalyzer(smellPrinter, parserFacade)
         );
         Files.walkFileTree(src, new SimpleFileVisitor<>(){
             @Override
