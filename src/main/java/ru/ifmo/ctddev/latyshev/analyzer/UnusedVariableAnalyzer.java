@@ -31,27 +31,31 @@ public class UnusedVariableAnalyzer extends Analyzer {
 
   @Override
     void analyzeMethod(MethodDeclaration md) {
-        declarations.addAll(md.getParameters());
-        super.analyzeMethod(md);
-        for (var declaration : declarations) {
-            if (md.getParameters().contains(declaration)) {
-                smellPrinter.print(smellResult, declaration + " is unused");
+        if (md.getBody().isPresent()) {
+            declarations.addAll(md.getParameters());
+            super.analyzeMethod(md);
+            for (var declaration : declarations) {
+                if (md.getParameters().contains(declaration)) {
+                    smellPrinter.print(smellResult, declaration + " is unused");
+                }
             }
+            declarations.removeAll(md.getParameters());
         }
-        declarations.removeAll(md.getParameters());
     }
 
     @Override
     void analyzeNode(Node node) {
-      System.out.println(declarations);
         if (node instanceof NameExpr) {
             var nameExpr = (NameExpr) node;
-            var nameResolved = parserFacade.solve(nameExpr);
-            if (nameResolved.isSolved()) {
-                var declaration = nameResolved.getCorrespondingDeclaration();
-                if (declaration instanceof JavaParserParameterDeclaration) {
-                    declarations.remove(((JavaParserParameterDeclaration) declaration).getWrappedNode());
+            try {
+                var nameResolved = parserFacade.solve(nameExpr);
+                if (nameResolved.isSolved()) {
+                    var declaration = nameResolved.getCorrespondingDeclaration();
+                    if (declaration instanceof JavaParserParameterDeclaration) {
+                        declarations.remove(((JavaParserParameterDeclaration) declaration).getWrappedNode());
+                    }
                 }
+            } catch (Exception e) {
             }
         } else if (node instanceof ClassOrInterfaceDeclaration) {
             analyzeClassOrInterfaceDeclaration((ClassOrInterfaceDeclaration) node);
