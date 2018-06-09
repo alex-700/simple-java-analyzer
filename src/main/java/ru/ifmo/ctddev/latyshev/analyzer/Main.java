@@ -3,6 +3,7 @@ package ru.ifmo.ctddev.latyshev.analyzer;
 import com.github.javaparser.symbolsolver.javaparsermodel.JavaParserFacade;
 import com.github.javaparser.symbolsolver.model.resolution.TypeSolver;
 import com.github.javaparser.symbolsolver.resolution.typesolvers.CombinedTypeSolver;
+import com.github.javaparser.symbolsolver.resolution.typesolvers.JarTypeSolver;
 import com.github.javaparser.symbolsolver.resolution.typesolvers.JavaParserTypeSolver;
 import com.github.javaparser.symbolsolver.resolution.typesolvers.ReflectionTypeSolver;
 import net.sourceforge.argparse4j.ArgumentParsers;
@@ -13,7 +14,9 @@ import net.sourceforge.argparse4j.inf.Namespace;
 import java.io.IOException;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -36,6 +39,39 @@ public class Main {
                 new ReflectionTypeSolver(),
                 new JavaParserTypeSolver(src)
         );
+
+        Map<String, Path> dep2path = new HashMap<>();
+        Files.walkFileTree(src, new SimpleFileVisitor<>(){
+            boolean inTarget = false;
+            @Override
+            public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) throws IOException {
+                if (dir.endsWith("target")) {
+                    inTarget = true;
+                }
+                return super.preVisitDirectory(dir, attrs);
+            }
+
+            @Override
+            public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+                if (inTarget) {
+                    String dep = file.getName(file.getNameCount() - 1).toString();
+                    dep2path.put(dep, file);
+                }
+                return super.visitFile(file, attrs);
+            }
+
+            @Override
+            public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
+                if (dir.endsWith("target")) {
+                    inTarget = false;
+                }
+                return super.postVisitDirectory(dir, exc);
+            }
+        });
+        for (var path : dep2path.values()) {
+            ((CombinedTypeSolver) typeSolver).add(new JarTypeSolver(path));
+        }
+
         final JavaParserFacade parserFacade = JavaParserFacade.get(typeSolver);
 
         SmellPrinter smellPrinter = new SimpleSmellPrinter();
