@@ -1,0 +1,1096 @@
+File: guava\android\guava\src\com\google\common\collect\AbstractMapBasedMultimap.java
+Class: AbstractMapBasedMultimap
+Method: Collection<V> createCollection(@NullableDecl K key)
+Range: (line 161,col 34)-(line 161,col 52)
+Code: @NullableDecl K key
+Verdict: key is unused
+File: guava\android\guava\src\com\google\common\collect\CompactHashMap.java
+Class: CompactHashMap
+Method: void accessEntry(int index)
+Range: (line 228,col 20)-(line 228,col 28)
+Code: int index
+Verdict: index is unused
+File: guava\android\guava\src\com\google\common\collect\Cut.java
+Class: Cut
+Method: Cut<C> canonical(DiscreteDomain<C> domain)
+Range: (line 64,col 20)-(line 64,col 43)
+Code: DiscreteDomain<C> domain
+Verdict: domain is unused
+File: guava\android\guava\src\com\google\common\reflect\TypeVisitor.java
+Class: TypeVisitor
+Method: void visitClass(Class<?> t)
+Range: (line 94,col 19)-(line 94,col 28)
+Code: Class<?> t
+Verdict: t is unused
+File: guava\android\guava\src\com\google\common\reflect\TypeVisitor.java
+Class: TypeVisitor
+Method: void visitGenericArrayType(GenericArrayType t)
+Range: (line 96,col 30)-(line 96,col 47)
+Code: GenericArrayType t
+Verdict: t is unused
+File: guava\android\guava\src\com\google\common\reflect\TypeVisitor.java
+Class: TypeVisitor
+Method: void visitParameterizedType(ParameterizedType t)
+Range: (line 98,col 31)-(line 98,col 49)
+Code: ParameterizedType t
+Verdict: t is unused
+File: guava\android\guava\src\com\google\common\reflect\TypeVisitor.java
+Class: TypeVisitor
+Method: void visitTypeVariable(TypeVariable<?> t)
+Range: (line 100,col 26)-(line 100,col 42)
+Code: TypeVariable<?> t
+Verdict: t is unused
+File: guava\android\guava\src\com\google\common\reflect\TypeVisitor.java
+Class: TypeVisitor
+Method: void visitWildcardType(WildcardType t)
+Range: (line 102,col 26)-(line 102,col 39)
+Code: WildcardType t
+Verdict: t is unused
+File: guava\android\guava-testlib\src\com\google\common\collect\testing\AbstractIteratorTester.java
+Class: AbstractIteratorTester
+Method: protected void verify(List<E> elements)
+Range: (line 312,col 25)-(line 312,col 40)
+Code: List<E> elements
+Verdict: elements is unused
+File: guava\android\guava-testlib\src\com\google\common\collect\testing\features\FeatureUtil.java
+Class: FeatureUtil
+Method: public static Iterable<Annotation> getTesterAnnotations(AnnotatedElement classOrMethod)
+Range: (line 231,col 5)-(line 244,col 5)
+Code: synchronized (annotationCache) {
+    List<Annotation> annotations = annotationCache.get(classOrMethod);
+    if (annotations == null) {
+        annotations = new ArrayList<>();
+        for (Annotation a : classOrMethod.getDeclaredAnnotations()) {
+            if (a.annotationType().isAnnotationPresent(TesterAnnotation.class)) {
+                annotations.add(a);
+            }
+        }
+        annotations = Collections.unmodifiableList(annotations);
+        annotationCache.put(classOrMethod, annotations);
+    }
+    return annotations;
+}
+Verdict: Synchronizing on a non-final variable annotationCache
+File: guava\android\guava-testlib\src\com\google\common\collect\testing\MapInterfaceTest.java
+Class: MapInterfaceTest
+Method: protected void assertMoreInvariants(Map<K, V> map)
+Range: (line 265,col 39)-(line 265,col 51)
+Code: Map<K, V> map
+Verdict: map is unused
+File: guava\android\guava-testlib\src\com\google\common\collect\testing\PerCollectionSizeTestSuiteBuilder.java
+Class: PerCollectionSizeTestSuiteBuilder
+Method: protected List<TestSuite> createDerivedSuites(FeatureSpecificTestSuiteBuilder<?, ? extends OneSizeTestContainerGenerator<T, E>> parentBuilder)
+Range: (line 114,col 7)-(line 115,col 23)
+Code: FeatureSpecificTestSuiteBuilder<?, ? extends OneSizeTestContainerGenerator<T, E>> parentBuilder
+Verdict: parentBuilder is unused
+File: guava\android\guava-testlib\test\com\google\common\testing\anotherpackage\SomeClassThatDoesNotUseNullable.java
+Class: SomeClassThatDoesNotUseNullable
+Method: void packagePrivateButDoesNotCheckNull(String s)
+Range: (line 23,col 42)-(line 23,col 49)
+Code: String s
+Verdict: s is unused
+File: guava\android\guava-testlib\test\com\google\common\testing\anotherpackage\SomeClassThatDoesNotUseNullable.java
+Class: SomeClassThatDoesNotUseNullable
+Method: protected void protectedButDoesNotCheckNull(String s)
+Range: (line 25,col 47)-(line 25,col 54)
+Code: String s
+Verdict: s is unused
+File: guava\android\guava-testlib\test\com\google\common\testing\anotherpackage\SomeClassThatDoesNotUseNullable.java
+Class: SomeClassThatDoesNotUseNullable
+Method: public void publicButDoesNotCheckNull(String s)
+Range: (line 27,col 41)-(line 27,col 48)
+Code: String s
+Verdict: s is unused
+File: guava\android\guava-testlib\test\com\google\common\testing\anotherpackage\SomeClassThatDoesNotUseNullable.java
+Class: SomeClassThatDoesNotUseNullable
+Method: public static void staticButDoesNotCheckNull(String s)
+Range: (line 29,col 48)-(line 29,col 55)
+Code: String s
+Verdict: s is unused
+File: guava\android\guava-tests\benchmark\com\google\common\eventbus\EventBusBenchmark.java
+Class: EventBusBenchmark
+Method: public void handleStrings(String string)
+Range: (line 45,col 29)-(line 45,col 41)
+Code: String string
+Verdict: string is unused
+File: guava\android\guava-tests\test\com\google\common\cache\LocalCacheTest.java
+Class: LocalCacheTest
+Method: private static void assertNotificationEnqueued(LocalCache<K, V> map, K key, V value, int hash)
+Range: (line 1998,col 45)-(line 1998,col 52)
+Code: int hash
+Verdict: hash is unused
+File: guava\android\guava-tests\test\com\google\common\collect\MultimapsTest.java
+Class: MultimapsTest
+Method: public void testSynchronizedMultimapSampleCodeCompilation()
+Range: (line 916,col 5)-(line 921,col 5)
+Code: synchronized (multimap) {
+    // Synchronizing on multimap, not values!
+    // Must be in synchronized block
+    Iterator<V> i = values.iterator();
+    while (i.hasNext()) {
+        foo(i.next());
+    }
+}
+Verdict: Synchronizing on a local variable multimap
+File: guava\android\guava-tests\test\com\google\common\collect\MultimapsTest.java
+Class: MultimapsTest
+Method: private static void foo(Object o)
+Range: (line 924,col 27)-(line 924,col 34)
+Code: Object o
+Verdict: o is unused
+File: guava\android\guava-tests\test\com\google\common\eventbus\StringCatcher.java
+Class: StringCatcher
+Method: public void methodWithoutAnnotation(@NullableDecl String string)
+Range: (line 40,col 39)-(line 40,col 65)
+Code: @NullableDecl String string
+Verdict: string is unused
+File: guava\android\guava-tests\test\com\google\common\eventbus\SubscriberTest.java
+Class: SubscriberTest
+Method: public void threadSafeMethod(Object arg)
+Range: (line 141,col 32)-(line 141,col 41)
+Code: Object arg
+Verdict: arg is unused
+File: guava\android\guava-tests\test\com\google\common\math\DoubleMathTest.java
+Class: DoubleMathTest
+Method: public void testRoundLog2Half()
+Range: (line 396,col 9)-(line 402,col 9)
+Code: if (exp < 0) {
+    assertEquals(exp + 1, DoubleMath.log2(x, mode));
+    assertEquals(exp, DoubleMath.log2(y, mode));
+} else {
+    assertEquals(exp + 1, DoubleMath.log2(x, mode));
+    assertEquals(exp, DoubleMath.log2(y, mode));
+}
+Verdict: Equivalent if branches
+File: guava\guava\src\com\google\common\collect\AbstractMapBasedMultimap.java
+Class: AbstractMapBasedMultimap
+Method: Collection<V> createCollection(@Nullable K key)
+Range: (line 163,col 34)-(line 163,col 48)
+Code: @Nullable K key
+Verdict: key is unused
+File: guava\guava\src\com\google\common\collect\CompactHashMap.java
+Class: CompactHashMap
+Method: void accessEntry(int index)
+Range: (line 233,col 20)-(line 233,col 28)
+Code: int index
+Verdict: index is unused
+File: guava\guava\src\com\google\common\collect\Cut.java
+Class: Cut
+Method: Cut<C> canonical(DiscreteDomain<C> domain)
+Range: (line 64,col 20)-(line 64,col 43)
+Code: DiscreteDomain<C> domain
+Verdict: domain is unused
+File: guava\guava\src\com\google\common\collect\Multisets.java
+Class: Multisets
+Method: private static boolean addAllImpl(Multiset<E> self, Multiset<? extends E> elements)
+Range: (line 903,col 41)-(line 903,col 56)
+Code: Multiset<E> self
+Verdict: self is unused
+File: guava\guava\src\com\google\common\reflect\TypeVisitor.java
+Class: TypeVisitor
+Method: void visitClass(Class<?> t)
+Range: (line 94,col 19)-(line 94,col 28)
+Code: Class<?> t
+Verdict: t is unused
+File: guava\guava\src\com\google\common\reflect\TypeVisitor.java
+Class: TypeVisitor
+Method: void visitGenericArrayType(GenericArrayType t)
+Range: (line 96,col 30)-(line 96,col 47)
+Code: GenericArrayType t
+Verdict: t is unused
+File: guava\guava\src\com\google\common\reflect\TypeVisitor.java
+Class: TypeVisitor
+Method: void visitParameterizedType(ParameterizedType t)
+Range: (line 98,col 31)-(line 98,col 49)
+Code: ParameterizedType t
+Verdict: t is unused
+File: guava\guava\src\com\google\common\reflect\TypeVisitor.java
+Class: TypeVisitor
+Method: void visitTypeVariable(TypeVariable<?> t)
+Range: (line 100,col 26)-(line 100,col 42)
+Code: TypeVariable<?> t
+Verdict: t is unused
+File: guava\guava\src\com\google\common\reflect\TypeVisitor.java
+Class: TypeVisitor
+Method: void visitWildcardType(WildcardType t)
+Range: (line 102,col 26)-(line 102,col 39)
+Code: WildcardType t
+Verdict: t is unused
+File: guava\guava-gwt\src\com\google\common\base\Absent_CustomFieldSerializer.java
+Class: Absent_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, Absent<?> instance)
+Range: (line 34,col 34)-(line 34,col 65)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\base\Absent_CustomFieldSerializer.java
+Class: Absent_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, Absent<?> instance)
+Range: (line 34,col 68)-(line 34,col 85)
+Code: Absent<?> instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\base\Absent_CustomFieldSerializer.java
+Class: Absent_CustomFieldSerializer
+Method: public static Absent<?> instantiate(SerializationStreamReader reader)
+Range: (line 36,col 39)-(line 36,col 70)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\base\Absent_CustomFieldSerializer.java
+Class: Absent_CustomFieldSerializer
+Method: public static void serialize(SerializationStreamWriter writer, Absent<?> instance)
+Range: (line 40,col 32)-(line 40,col 63)
+Code: SerializationStreamWriter writer
+Verdict: writer is unused
+File: guava\guava-gwt\src\com\google\common\base\Absent_CustomFieldSerializer.java
+Class: Absent_CustomFieldSerializer
+Method: public static void serialize(SerializationStreamWriter writer, Absent<?> instance)
+Range: (line 40,col 66)-(line 40,col 83)
+Code: Absent<?> instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\base\PairwiseEquivalence_CustomFieldSerializer.java
+Class: PairwiseEquivalence_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, PairwiseEquivalence<?> instance)
+Range: (line 33,col 41)-(line 33,col 71)
+Code: PairwiseEquivalence<?> instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\base\PairwiseEquivalence_CustomFieldSerializer.java
+Class: PairwiseEquivalence_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, PairwiseEquivalence<?> instance)
+Range: (line 33,col 7)-(line 33,col 38)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\base\Present_CustomFieldSerializer.java
+Class: Present_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, Present<?> instance)
+Range: (line 31,col 68)-(line 31,col 86)
+Code: Present<?> instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\base\Present_CustomFieldSerializer.java
+Class: Present_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, Present<?> instance)
+Range: (line 31,col 34)-(line 31,col 65)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\AllEqualOrdering_CustomFieldSerializer.java
+Class: AllEqualOrdering_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, AllEqualOrdering instance)
+Range: (line 28,col 68)-(line 28,col 92)
+Code: AllEqualOrdering instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\AllEqualOrdering_CustomFieldSerializer.java
+Class: AllEqualOrdering_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, AllEqualOrdering instance)
+Range: (line 28,col 34)-(line 28,col 65)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\AllEqualOrdering_CustomFieldSerializer.java
+Class: AllEqualOrdering_CustomFieldSerializer
+Method: public static AllEqualOrdering instantiate(SerializationStreamReader reader)
+Range: (line 30,col 46)-(line 30,col 77)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\AllEqualOrdering_CustomFieldSerializer.java
+Class: AllEqualOrdering_CustomFieldSerializer
+Method: public static void serialize(SerializationStreamWriter writer, AllEqualOrdering instance)
+Range: (line 34,col 66)-(line 34,col 90)
+Code: AllEqualOrdering instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\AllEqualOrdering_CustomFieldSerializer.java
+Class: AllEqualOrdering_CustomFieldSerializer
+Method: public static void serialize(SerializationStreamWriter writer, AllEqualOrdering instance)
+Range: (line 34,col 32)-(line 34,col 63)
+Code: SerializationStreamWriter writer
+Verdict: writer is unused
+File: guava\guava-gwt\src\com\google\common\collect\ArrayListMultimap_CustomFieldSerializer.java
+Class: ArrayListMultimap_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader in, ArrayListMultimap<?, ?> out)
+Range: (line 30,col 64)-(line 30,col 90)
+Code: ArrayListMultimap<?, ?> out
+Verdict: out is unused
+File: guava\guava-gwt\src\com\google\common\collect\ArrayListMultimap_CustomFieldSerializer.java
+Class: ArrayListMultimap_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader in, ArrayListMultimap<?, ?> out)
+Range: (line 30,col 34)-(line 30,col 61)
+Code: SerializationStreamReader in
+Verdict: in is unused
+File: guava\guava-gwt\src\com\google\common\collect\ByFunctionOrdering_CustomFieldSerializer.java
+Class: ByFunctionOrdering_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, ByFunctionOrdering<?, ?> instance)
+Range: (line 32,col 7)-(line 32,col 38)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\ByFunctionOrdering_CustomFieldSerializer.java
+Class: ByFunctionOrdering_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, ByFunctionOrdering<?, ?> instance)
+Range: (line 32,col 41)-(line 32,col 73)
+Code: ByFunctionOrdering<?, ?> instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\ComparatorOrdering_CustomFieldSerializer.java
+Class: ComparatorOrdering_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, ComparatorOrdering<?> instance)
+Range: (line 32,col 41)-(line 32,col 70)
+Code: ComparatorOrdering<?> instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\ComparatorOrdering_CustomFieldSerializer.java
+Class: ComparatorOrdering_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, ComparatorOrdering<?> instance)
+Range: (line 32,col 7)-(line 32,col 38)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\CompoundOrdering_CustomFieldSerializer.java
+Class: CompoundOrdering_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, CompoundOrdering<?> instance)
+Range: (line 33,col 68)-(line 33,col 95)
+Code: CompoundOrdering<?> instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\CompoundOrdering_CustomFieldSerializer.java
+Class: CompoundOrdering_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, CompoundOrdering<?> instance)
+Range: (line 33,col 34)-(line 33,col 65)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\DenseImmutableTable_CustomFieldSerializer.java
+Class: DenseImmutableTable_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, DenseImmutableTable<?, ?, ?> instance)
+Range: (line 28,col 41)-(line 28,col 77)
+Code: DenseImmutableTable<?, ?, ?> instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\DenseImmutableTable_CustomFieldSerializer.java
+Class: DenseImmutableTable_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, DenseImmutableTable<?, ?, ?> instance)
+Range: (line 28,col 7)-(line 28,col 38)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\EmptyImmutableListMultimap_CustomFieldSerializer.java
+Class: EmptyImmutableListMultimap_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, EmptyImmutableListMultimap instance)
+Range: (line 30,col 41)-(line 30,col 75)
+Code: EmptyImmutableListMultimap instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\EmptyImmutableListMultimap_CustomFieldSerializer.java
+Class: EmptyImmutableListMultimap_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, EmptyImmutableListMultimap instance)
+Range: (line 30,col 7)-(line 30,col 38)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\EmptyImmutableListMultimap_CustomFieldSerializer.java
+Class: EmptyImmutableListMultimap_CustomFieldSerializer
+Method: public static EmptyImmutableListMultimap instantiate(SerializationStreamReader reader)
+Range: (line 32,col 56)-(line 32,col 87)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\EmptyImmutableListMultimap_CustomFieldSerializer.java
+Class: EmptyImmutableListMultimap_CustomFieldSerializer
+Method: public static void serialize(SerializationStreamWriter writer, EmptyImmutableListMultimap instance)
+Range: (line 37,col 41)-(line 37,col 75)
+Code: EmptyImmutableListMultimap instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\EmptyImmutableListMultimap_CustomFieldSerializer.java
+Class: EmptyImmutableListMultimap_CustomFieldSerializer
+Method: public static void serialize(SerializationStreamWriter writer, EmptyImmutableListMultimap instance)
+Range: (line 37,col 7)-(line 37,col 38)
+Code: SerializationStreamWriter writer
+Verdict: writer is unused
+File: guava\guava-gwt\src\com\google\common\collect\EmptyImmutableSetMultimap_CustomFieldSerializer.java
+Class: EmptyImmutableSetMultimap_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, EmptyImmutableSetMultimap instance)
+Range: (line 30,col 41)-(line 30,col 74)
+Code: EmptyImmutableSetMultimap instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\EmptyImmutableSetMultimap_CustomFieldSerializer.java
+Class: EmptyImmutableSetMultimap_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, EmptyImmutableSetMultimap instance)
+Range: (line 30,col 7)-(line 30,col 38)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\EmptyImmutableSetMultimap_CustomFieldSerializer.java
+Class: EmptyImmutableSetMultimap_CustomFieldSerializer
+Method: public static EmptyImmutableSetMultimap instantiate(SerializationStreamReader reader)
+Range: (line 32,col 55)-(line 32,col 86)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\EmptyImmutableSetMultimap_CustomFieldSerializer.java
+Class: EmptyImmutableSetMultimap_CustomFieldSerializer
+Method: public static void serialize(SerializationStreamWriter writer, EmptyImmutableSetMultimap instance)
+Range: (line 37,col 41)-(line 37,col 74)
+Code: EmptyImmutableSetMultimap instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\EmptyImmutableSetMultimap_CustomFieldSerializer.java
+Class: EmptyImmutableSetMultimap_CustomFieldSerializer
+Method: public static void serialize(SerializationStreamWriter writer, EmptyImmutableSetMultimap instance)
+Range: (line 37,col 7)-(line 37,col 38)
+Code: SerializationStreamWriter writer
+Verdict: writer is unused
+File: guava\guava-gwt\src\com\google\common\collect\ExplicitOrdering_CustomFieldSerializer.java
+Class: ExplicitOrdering_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, ExplicitOrdering<?> instance)
+Range: (line 30,col 34)-(line 30,col 65)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\ExplicitOrdering_CustomFieldSerializer.java
+Class: ExplicitOrdering_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, ExplicitOrdering<?> instance)
+Range: (line 30,col 68)-(line 30,col 95)
+Code: ExplicitOrdering<?> instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\HashBasedTable_CustomFieldSerializer.java
+Class: HashBasedTable_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, HashBasedTable<?, ?, ?> table)
+Range: (line 27,col 68)-(line 27,col 96)
+Code: HashBasedTable<?, ?, ?> table
+Verdict: table is unused
+File: guava\guava-gwt\src\com\google\common\collect\HashBasedTable_CustomFieldSerializer.java
+Class: HashBasedTable_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, HashBasedTable<?, ?, ?> table)
+Range: (line 27,col 34)-(line 27,col 65)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\HashMultimap_CustomFieldSerializer.java
+Class: HashMultimap_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader in, HashMultimap<?, ?> out)
+Range: (line 30,col 64)-(line 30,col 85)
+Code: HashMultimap<?, ?> out
+Verdict: out is unused
+File: guava\guava-gwt\src\com\google\common\collect\HashMultimap_CustomFieldSerializer.java
+Class: HashMultimap_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader in, HashMultimap<?, ?> out)
+Range: (line 30,col 34)-(line 30,col 61)
+Code: SerializationStreamReader in
+Verdict: in is unused
+File: guava\guava-gwt\src\com\google\common\collect\HashMultiset_CustomFieldSerializer.java
+Class: HashMultiset_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, HashMultiset<?> instance)
+Range: (line 30,col 68)-(line 30,col 91)
+Code: HashMultiset<?> instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\HashMultiset_CustomFieldSerializer.java
+Class: HashMultiset_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, HashMultiset<?> instance)
+Range: (line 30,col 34)-(line 30,col 65)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\ImmutableEntry_CustomFieldSerializer.java
+Class: ImmutableEntry_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, ImmutableEntry<?, ?> instance)
+Range: (line 30,col 34)-(line 30,col 65)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\ImmutableEntry_CustomFieldSerializer.java
+Class: ImmutableEntry_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, ImmutableEntry<?, ?> instance)
+Range: (line 30,col 68)-(line 30,col 96)
+Code: ImmutableEntry<?, ?> instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\ImmutableEnumMap_CustomFieldSerializer.java
+Class: ImmutableEnumMap_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, ImmutableEnumMap<?, ?> instance)
+Range: (line 33,col 41)-(line 33,col 71)
+Code: ImmutableEnumMap<?, ?> instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\ImmutableEnumMap_CustomFieldSerializer.java
+Class: ImmutableEnumMap_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, ImmutableEnumMap<?, ?> instance)
+Range: (line 33,col 7)-(line 33,col 38)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\ImmutableEnumSet_CustomFieldSerializer.java
+Class: ImmutableEnumSet_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, ImmutableEnumSet<?> instance)
+Range: (line 32,col 34)-(line 32,col 65)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\ImmutableEnumSet_CustomFieldSerializer.java
+Class: ImmutableEnumSet_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, ImmutableEnumSet<?> instance)
+Range: (line 32,col 68)-(line 32,col 95)
+Code: ImmutableEnumSet<?> instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\ImmutableListMultimap_CustomFieldSerializer.java
+Class: ImmutableListMultimap_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, ImmutableListMultimap<?, ?> instance)
+Range: (line 31,col 7)-(line 31,col 38)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\ImmutableListMultimap_CustomFieldSerializer.java
+Class: ImmutableListMultimap_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, ImmutableListMultimap<?, ?> instance)
+Range: (line 31,col 41)-(line 31,col 76)
+Code: ImmutableListMultimap<?, ?> instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\ImmutableSetMultimap_CustomFieldSerializer.java
+Class: ImmutableSetMultimap_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, ImmutableSetMultimap<?, ?> instance)
+Range: (line 32,col 41)-(line 32,col 75)
+Code: ImmutableSetMultimap<?, ?> instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\ImmutableSetMultimap_CustomFieldSerializer.java
+Class: ImmutableSetMultimap_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, ImmutableSetMultimap<?, ?> instance)
+Range: (line 32,col 7)-(line 32,col 38)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\ImmutableSortedMap_CustomFieldSerializer.java
+Class: ImmutableSortedMap_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, ImmutableSortedMap<?, ?> instance)
+Range: (line 32,col 7)-(line 32,col 38)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\ImmutableSortedMap_CustomFieldSerializer.java
+Class: ImmutableSortedMap_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, ImmutableSortedMap<?, ?> instance)
+Range: (line 32,col 41)-(line 32,col 73)
+Code: ImmutableSortedMap<?, ?> instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\JdkBackedImmutableBiMap_CustomFieldSerializer.java
+Class: JdkBackedImmutableBiMap_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, ImmutableBiMap<?, ?> instance)
+Range: (line 33,col 34)-(line 33,col 65)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\JdkBackedImmutableBiMap_CustomFieldSerializer.java
+Class: JdkBackedImmutableBiMap_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, ImmutableBiMap<?, ?> instance)
+Range: (line 33,col 68)-(line 33,col 96)
+Code: ImmutableBiMap<?, ?> instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\JdkBackedImmutableMap_CustomFieldSerializer.java
+Class: JdkBackedImmutableMap_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, ImmutableMap<?, ?> instance)
+Range: (line 33,col 34)-(line 33,col 65)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\JdkBackedImmutableMap_CustomFieldSerializer.java
+Class: JdkBackedImmutableMap_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, ImmutableMap<?, ?> instance)
+Range: (line 33,col 68)-(line 33,col 94)
+Code: ImmutableMap<?, ?> instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\JdkBackedImmutableMultiset_CustomFieldSerializer.java
+Class: JdkBackedImmutableMultiset_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, ImmutableMultiset<?> instance)
+Range: (line 30,col 68)-(line 30,col 96)
+Code: ImmutableMultiset<?> instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\JdkBackedImmutableMultiset_CustomFieldSerializer.java
+Class: JdkBackedImmutableMultiset_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, ImmutableMultiset<?> instance)
+Range: (line 30,col 34)-(line 30,col 65)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\JdkBackedImmutableSet_CustomFieldSerializer.java
+Class: JdkBackedImmutableSet_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, ImmutableSet<?> instance)
+Range: (line 32,col 34)-(line 32,col 65)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\JdkBackedImmutableSet_CustomFieldSerializer.java
+Class: JdkBackedImmutableSet_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, ImmutableSet<?> instance)
+Range: (line 32,col 68)-(line 32,col 91)
+Code: ImmutableSet<?> instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\LexicographicalOrdering_CustomFieldSerializer.java
+Class: LexicographicalOrdering_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, LexicographicalOrdering<?> instance)
+Range: (line 31,col 41)-(line 31,col 75)
+Code: LexicographicalOrdering<?> instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\LexicographicalOrdering_CustomFieldSerializer.java
+Class: LexicographicalOrdering_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, LexicographicalOrdering<?> instance)
+Range: (line 31,col 7)-(line 31,col 38)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\LinkedHashMultimap_CustomFieldSerializer.java
+Class: LinkedHashMultimap_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader in, LinkedHashMultimap<?, ?> out)
+Range: (line 34,col 64)-(line 34,col 91)
+Code: LinkedHashMultimap<?, ?> out
+Verdict: out is unused
+File: guava\guava-gwt\src\com\google\common\collect\LinkedHashMultimap_CustomFieldSerializer.java
+Class: LinkedHashMultimap_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader in, LinkedHashMultimap<?, ?> out)
+Range: (line 34,col 34)-(line 34,col 61)
+Code: SerializationStreamReader in
+Verdict: in is unused
+File: guava\guava-gwt\src\com\google\common\collect\LinkedHashMultiset_CustomFieldSerializer.java
+Class: LinkedHashMultiset_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, LinkedHashMultiset<?> instance)
+Range: (line 31,col 7)-(line 31,col 38)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\LinkedHashMultiset_CustomFieldSerializer.java
+Class: LinkedHashMultiset_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, LinkedHashMultiset<?> instance)
+Range: (line 31,col 41)-(line 31,col 70)
+Code: LinkedHashMultiset<?> instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\LinkedListMultimap_CustomFieldSerializer.java
+Class: LinkedListMultimap_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader in, LinkedListMultimap<?, ?> out)
+Range: (line 31,col 64)-(line 31,col 91)
+Code: LinkedListMultimap<?, ?> out
+Verdict: out is unused
+File: guava\guava-gwt\src\com\google\common\collect\LinkedListMultimap_CustomFieldSerializer.java
+Class: LinkedListMultimap_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader in, LinkedListMultimap<?, ?> out)
+Range: (line 31,col 34)-(line 31,col 61)
+Code: SerializationStreamReader in
+Verdict: in is unused
+File: guava\guava-gwt\src\com\google\common\collect\NaturalOrdering_CustomFieldSerializer.java
+Class: NaturalOrdering_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, NaturalOrdering instance)
+Range: (line 29,col 68)-(line 29,col 91)
+Code: NaturalOrdering instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\NaturalOrdering_CustomFieldSerializer.java
+Class: NaturalOrdering_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, NaturalOrdering instance)
+Range: (line 29,col 34)-(line 29,col 65)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\NaturalOrdering_CustomFieldSerializer.java
+Class: NaturalOrdering_CustomFieldSerializer
+Method: public static NaturalOrdering instantiate(SerializationStreamReader reader)
+Range: (line 31,col 45)-(line 31,col 76)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\NaturalOrdering_CustomFieldSerializer.java
+Class: NaturalOrdering_CustomFieldSerializer
+Method: public static void serialize(SerializationStreamWriter writer, NaturalOrdering instance)
+Range: (line 35,col 66)-(line 35,col 89)
+Code: NaturalOrdering instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\NaturalOrdering_CustomFieldSerializer.java
+Class: NaturalOrdering_CustomFieldSerializer
+Method: public static void serialize(SerializationStreamWriter writer, NaturalOrdering instance)
+Range: (line 35,col 32)-(line 35,col 63)
+Code: SerializationStreamWriter writer
+Verdict: writer is unused
+File: guava\guava-gwt\src\com\google\common\collect\NullsFirstOrdering_CustomFieldSerializer.java
+Class: NullsFirstOrdering_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, NullsFirstOrdering<?> instance)
+Range: (line 31,col 41)-(line 31,col 70)
+Code: NullsFirstOrdering<?> instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\NullsFirstOrdering_CustomFieldSerializer.java
+Class: NullsFirstOrdering_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, NullsFirstOrdering<?> instance)
+Range: (line 31,col 7)-(line 31,col 38)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\NullsLastOrdering_CustomFieldSerializer.java
+Class: NullsLastOrdering_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, NullsLastOrdering<?> instance)
+Range: (line 30,col 68)-(line 30,col 96)
+Code: NullsLastOrdering<?> instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\NullsLastOrdering_CustomFieldSerializer.java
+Class: NullsLastOrdering_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, NullsLastOrdering<?> instance)
+Range: (line 30,col 34)-(line 30,col 65)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\Range_CustomFieldSerializer.java
+Class: Range_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, Range<?> instance)
+Range: (line 30,col 34)-(line 30,col 65)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\Range_CustomFieldSerializer.java
+Class: Range_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, Range<?> instance)
+Range: (line 30,col 68)-(line 30,col 84)
+Code: Range<?> instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\RegularImmutableAsList_CustomFieldSerializer.java
+Class: RegularImmutableAsList_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, RegularImmutableAsList<?> instance)
+Range: (line 35,col 7)-(line 35,col 38)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\RegularImmutableAsList_CustomFieldSerializer.java
+Class: RegularImmutableAsList_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, RegularImmutableAsList<?> instance)
+Range: (line 35,col 41)-(line 35,col 74)
+Code: RegularImmutableAsList<?> instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\RegularImmutableBiMap_CustomFieldSerializer.java
+Class: RegularImmutableBiMap_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, ImmutableBiMap<?, ?> instance)
+Range: (line 32,col 34)-(line 32,col 65)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\RegularImmutableBiMap_CustomFieldSerializer.java
+Class: RegularImmutableBiMap_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, ImmutableBiMap<?, ?> instance)
+Range: (line 32,col 68)-(line 32,col 96)
+Code: ImmutableBiMap<?, ?> instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\RegularImmutableList_CustomFieldSerializer.java
+Class: RegularImmutableList_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, RegularImmutableList<?> instance)
+Range: (line 34,col 41)-(line 34,col 72)
+Code: RegularImmutableList<?> instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\RegularImmutableList_CustomFieldSerializer.java
+Class: RegularImmutableList_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, RegularImmutableList<?> instance)
+Range: (line 34,col 7)-(line 34,col 38)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\RegularImmutableMap_CustomFieldSerializer.java
+Class: RegularImmutableMap_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, ImmutableMap<?, ?> instance)
+Range: (line 33,col 34)-(line 33,col 65)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\RegularImmutableMap_CustomFieldSerializer.java
+Class: RegularImmutableMap_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, ImmutableMap<?, ?> instance)
+Range: (line 33,col 68)-(line 33,col 94)
+Code: ImmutableMap<?, ?> instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\RegularImmutableMultiset_CustomFieldSerializer.java
+Class: RegularImmutableMultiset_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, ImmutableMultiset<?> instance)
+Range: (line 29,col 68)-(line 29,col 96)
+Code: ImmutableMultiset<?> instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\RegularImmutableMultiset_CustomFieldSerializer.java
+Class: RegularImmutableMultiset_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, ImmutableMultiset<?> instance)
+Range: (line 29,col 34)-(line 29,col 65)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\RegularImmutableSet_CustomFieldSerializer.java
+Class: RegularImmutableSet_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, ImmutableSet<?> instance)
+Range: (line 32,col 34)-(line 32,col 65)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\RegularImmutableSet_CustomFieldSerializer.java
+Class: RegularImmutableSet_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, ImmutableSet<?> instance)
+Range: (line 32,col 68)-(line 32,col 91)
+Code: ImmutableSet<?> instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\RegularImmutableSortedSet_CustomFieldSerializer.java
+Class: RegularImmutableSortedSet_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, RegularImmutableSortedSet<?> instance)
+Range: (line 34,col 41)-(line 34,col 77)
+Code: RegularImmutableSortedSet<?> instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\RegularImmutableSortedSet_CustomFieldSerializer.java
+Class: RegularImmutableSortedSet_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, RegularImmutableSortedSet<?> instance)
+Range: (line 34,col 7)-(line 34,col 38)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\ReverseNaturalOrdering_CustomFieldSerializer.java
+Class: ReverseNaturalOrdering_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, ReverseNaturalOrdering instance)
+Range: (line 30,col 41)-(line 30,col 71)
+Code: ReverseNaturalOrdering instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\ReverseNaturalOrdering_CustomFieldSerializer.java
+Class: ReverseNaturalOrdering_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, ReverseNaturalOrdering instance)
+Range: (line 30,col 7)-(line 30,col 38)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\ReverseNaturalOrdering_CustomFieldSerializer.java
+Class: ReverseNaturalOrdering_CustomFieldSerializer
+Method: public static ReverseNaturalOrdering instantiate(SerializationStreamReader reader)
+Range: (line 32,col 52)-(line 32,col 83)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\ReverseNaturalOrdering_CustomFieldSerializer.java
+Class: ReverseNaturalOrdering_CustomFieldSerializer
+Method: public static void serialize(SerializationStreamWriter writer, ReverseNaturalOrdering instance)
+Range: (line 36,col 66)-(line 36,col 96)
+Code: ReverseNaturalOrdering instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\ReverseNaturalOrdering_CustomFieldSerializer.java
+Class: ReverseNaturalOrdering_CustomFieldSerializer
+Method: public static void serialize(SerializationStreamWriter writer, ReverseNaturalOrdering instance)
+Range: (line 36,col 32)-(line 36,col 63)
+Code: SerializationStreamWriter writer
+Verdict: writer is unused
+File: guava\guava-gwt\src\com\google\common\collect\ReverseOrdering_CustomFieldSerializer.java
+Class: ReverseOrdering_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, ReverseOrdering<?> instance)
+Range: (line 30,col 68)-(line 30,col 94)
+Code: ReverseOrdering<?> instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\ReverseOrdering_CustomFieldSerializer.java
+Class: ReverseOrdering_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, ReverseOrdering<?> instance)
+Range: (line 30,col 34)-(line 30,col 65)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\SingletonImmutableBiMap_CustomFieldSerializer.java
+Class: SingletonImmutableBiMap_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, SingletonImmutableBiMap<?, ?> instance)
+Range: (line 33,col 7)-(line 33,col 38)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\SingletonImmutableBiMap_CustomFieldSerializer.java
+Class: SingletonImmutableBiMap_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, SingletonImmutableBiMap<?, ?> instance)
+Range: (line 33,col 41)-(line 33,col 78)
+Code: SingletonImmutableBiMap<?, ?> instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\SingletonImmutableList_CustomFieldSerializer.java
+Class: SingletonImmutableList_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, SingletonImmutableList<?> instance)
+Range: (line 31,col 41)-(line 31,col 74)
+Code: SingletonImmutableList<?> instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\SingletonImmutableList_CustomFieldSerializer.java
+Class: SingletonImmutableList_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, SingletonImmutableList<?> instance)
+Range: (line 31,col 7)-(line 31,col 38)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\SingletonImmutableSet_CustomFieldSerializer.java
+Class: SingletonImmutableSet_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, SingletonImmutableSet<?> instance)
+Range: (line 31,col 41)-(line 31,col 73)
+Code: SingletonImmutableSet<?> instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\SingletonImmutableSet_CustomFieldSerializer.java
+Class: SingletonImmutableSet_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, SingletonImmutableSet<?> instance)
+Range: (line 31,col 7)-(line 31,col 38)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\SingletonImmutableTable_CustomFieldSerializer.java
+Class: SingletonImmutableTable_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, SingletonImmutableTable<?, ?, ?> instance)
+Range: (line 28,col 41)-(line 28,col 81)
+Code: SingletonImmutableTable<?, ?, ?> instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\SingletonImmutableTable_CustomFieldSerializer.java
+Class: SingletonImmutableTable_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, SingletonImmutableTable<?, ?, ?> instance)
+Range: (line 28,col 7)-(line 28,col 38)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\SparseImmutableTable_CustomFieldSerializer.java
+Class: SparseImmutableTable_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, SparseImmutableTable<?, ?, ?> instance)
+Range: (line 28,col 7)-(line 28,col 38)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\SparseImmutableTable_CustomFieldSerializer.java
+Class: SparseImmutableTable_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, SparseImmutableTable<?, ?, ?> instance)
+Range: (line 28,col 41)-(line 28,col 78)
+Code: SparseImmutableTable<?, ?, ?> instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\TreeBasedTable_CustomFieldSerializer.java
+Class: TreeBasedTable_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, TreeBasedTable<?, ?, ?> table)
+Range: (line 28,col 68)-(line 28,col 96)
+Code: TreeBasedTable<?, ?, ?> table
+Verdict: table is unused
+File: guava\guava-gwt\src\com\google\common\collect\TreeBasedTable_CustomFieldSerializer.java
+Class: TreeBasedTable_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, TreeBasedTable<?, ?, ?> table)
+Range: (line 28,col 34)-(line 28,col 65)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\TreeMultimap_CustomFieldSerializer.java
+Class: TreeMultimap_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader in, TreeMultimap<?, ?> out)
+Range: (line 31,col 34)-(line 31,col 61)
+Code: SerializationStreamReader in
+Verdict: in is unused
+File: guava\guava-gwt\src\com\google\common\collect\TreeMultimap_CustomFieldSerializer.java
+Class: TreeMultimap_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader in, TreeMultimap<?, ?> out)
+Range: (line 31,col 64)-(line 31,col 85)
+Code: TreeMultimap<?, ?> out
+Verdict: out is unused
+File: guava\guava-gwt\src\com\google\common\collect\UsingToStringOrdering_CustomFieldSerializer.java
+Class: UsingToStringOrdering_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, UsingToStringOrdering instance)
+Range: (line 30,col 41)-(line 30,col 70)
+Code: UsingToStringOrdering instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\UsingToStringOrdering_CustomFieldSerializer.java
+Class: UsingToStringOrdering_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, UsingToStringOrdering instance)
+Range: (line 30,col 7)-(line 30,col 38)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\UsingToStringOrdering_CustomFieldSerializer.java
+Class: UsingToStringOrdering_CustomFieldSerializer
+Method: public static UsingToStringOrdering instantiate(SerializationStreamReader reader)
+Range: (line 32,col 51)-(line 32,col 82)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src\com\google\common\collect\UsingToStringOrdering_CustomFieldSerializer.java
+Class: UsingToStringOrdering_CustomFieldSerializer
+Method: public static void serialize(SerializationStreamWriter writer, UsingToStringOrdering instance)
+Range: (line 36,col 66)-(line 36,col 95)
+Code: UsingToStringOrdering instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\collect\UsingToStringOrdering_CustomFieldSerializer.java
+Class: UsingToStringOrdering_CustomFieldSerializer
+Method: public static void serialize(SerializationStreamWriter writer, UsingToStringOrdering instance)
+Range: (line 36,col 32)-(line 36,col 63)
+Code: SerializationStreamWriter writer
+Verdict: writer is unused
+File: guava\guava-gwt\src\com\google\common\primitives\UnsignedLong_CustomFieldSerializer.java
+Class: UnsignedLong_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, UnsignedLong instance)
+Range: (line 27,col 68)-(line 27,col 88)
+Code: UnsignedLong instance
+Verdict: instance is unused
+File: guava\guava-gwt\src\com\google\common\primitives\UnsignedLong_CustomFieldSerializer.java
+Class: UnsignedLong_CustomFieldSerializer
+Method: public static void deserialize(SerializationStreamReader reader, UnsignedLong instance)
+Range: (line 27,col 34)-(line 27,col 65)
+Code: SerializationStreamReader reader
+Verdict: reader is unused
+File: guava\guava-gwt\src-super\com\google\common\util\concurrent\super\com\google\common\util\concurrent\Platform.java
+Class: Platform
+Method: static boolean isInstanceOfThrowableClass(Throwable t, Class<? extends Throwable> expectedClass)
+Range: (line 21,col 45)-(line 21,col 55)
+Code: Throwable t
+Verdict: t is unused
+File: guava\guava-gwt\src-super\com\google\common\util\concurrent\super\com\google\common\util\concurrent\Platform.java
+Class: Platform
+Method: static boolean isInstanceOfThrowableClass(Throwable t, Class<? extends Throwable> expectedClass)
+Range: (line 21,col 58)-(line 21,col 97)
+Code: Class<? extends Throwable> expectedClass
+Verdict: expectedClass is unused
+File: guava\guava-gwt\test-super\com\google\common\collect\testing\super\com\google\common\collect\testing\Platform.java
+Class: Platform
+Method: static void checkCast(Class<?> clazz, Object obj)
+Range: (line 30,col 25)-(line 30,col 38)
+Code: Class<?> clazz
+Verdict: clazz is unused
+File: guava\guava-gwt\test-super\com\google\common\collect\testing\super\com\google\common\collect\testing\Platform.java
+Class: Platform
+Method: static void checkCast(Class<?> clazz, Object obj)
+Range: (line 30,col 41)-(line 30,col 50)
+Code: Object obj
+Verdict: obj is unused
+File: guava\guava-testlib\src\com\google\common\collect\testing\AbstractIteratorTester.java
+Class: AbstractIteratorTester
+Method: protected void verify(List<E> elements)
+Range: (line 312,col 25)-(line 312,col 40)
+Code: List<E> elements
+Verdict: elements is unused
+File: guava\guava-testlib\src\com\google\common\collect\testing\features\FeatureUtil.java
+Class: FeatureUtil
+Method: public static Iterable<Annotation> getTesterAnnotations(AnnotatedElement classOrMethod)
+Range: (line 231,col 5)-(line 244,col 5)
+Code: synchronized (annotationCache) {
+    List<Annotation> annotations = annotationCache.get(classOrMethod);
+    if (annotations == null) {
+        annotations = new ArrayList<>();
+        for (Annotation a : classOrMethod.getDeclaredAnnotations()) {
+            if (a.annotationType().isAnnotationPresent(TesterAnnotation.class)) {
+                annotations.add(a);
+            }
+        }
+        annotations = Collections.unmodifiableList(annotations);
+        annotationCache.put(classOrMethod, annotations);
+    }
+    return annotations;
+}
+Verdict: Synchronizing on a non-final variable annotationCache
+File: guava\guava-testlib\src\com\google\common\collect\testing\MapInterfaceTest.java
+Class: MapInterfaceTest
+Method: protected void assertMoreInvariants(Map<K, V> map)
+Range: (line 265,col 39)-(line 265,col 51)
+Code: Map<K, V> map
+Verdict: map is unused
+File: guava\guava-testlib\src\com\google\common\collect\testing\PerCollectionSizeTestSuiteBuilder.java
+Class: PerCollectionSizeTestSuiteBuilder
+Method: protected List<TestSuite> createDerivedSuites(FeatureSpecificTestSuiteBuilder<?, ? extends OneSizeTestContainerGenerator<T, E>> parentBuilder)
+Range: (line 114,col 7)-(line 115,col 23)
+Code: FeatureSpecificTestSuiteBuilder<?, ? extends OneSizeTestContainerGenerator<T, E>> parentBuilder
+Verdict: parentBuilder is unused
+File: guava\guava-testlib\test\com\google\common\testing\anotherpackage\SomeClassThatDoesNotUseNullable.java
+Class: SomeClassThatDoesNotUseNullable
+Method: void packagePrivateButDoesNotCheckNull(String s)
+Range: (line 23,col 42)-(line 23,col 49)
+Code: String s
+Verdict: s is unused
+File: guava\guava-testlib\test\com\google\common\testing\anotherpackage\SomeClassThatDoesNotUseNullable.java
+Class: SomeClassThatDoesNotUseNullable
+Method: protected void protectedButDoesNotCheckNull(String s)
+Range: (line 25,col 47)-(line 25,col 54)
+Code: String s
+Verdict: s is unused
+File: guava\guava-testlib\test\com\google\common\testing\anotherpackage\SomeClassThatDoesNotUseNullable.java
+Class: SomeClassThatDoesNotUseNullable
+Method: public void publicButDoesNotCheckNull(String s)
+Range: (line 27,col 41)-(line 27,col 48)
+Code: String s
+Verdict: s is unused
+File: guava\guava-testlib\test\com\google\common\testing\anotherpackage\SomeClassThatDoesNotUseNullable.java
+Class: SomeClassThatDoesNotUseNullable
+Method: public static void staticButDoesNotCheckNull(String s)
+Range: (line 29,col 48)-(line 29,col 55)
+Code: String s
+Verdict: s is unused
+File: guava\guava-tests\benchmark\com\google\common\eventbus\EventBusBenchmark.java
+Class: EventBusBenchmark
+Method: public void handleStrings(String string)
+Range: (line 45,col 29)-(line 45,col 41)
+Code: String string
+Verdict: string is unused
+File: guava\guava-tests\test\com\google\common\cache\LocalCacheTest.java
+Class: LocalCacheTest
+Method: private static void assertNotificationEnqueued(LocalCache<K, V> map, K key, V value, int hash)
+Range: (line 2047,col 45)-(line 2047,col 52)
+Code: int hash
+Verdict: hash is unused
+File: guava\guava-tests\test\com\google\common\collect\MultimapsTest.java
+Class: MultimapsTest
+Method: public void testSynchronizedMultimapSampleCodeCompilation()
+Range: (line 973,col 5)-(line 978,col 5)
+Code: synchronized (multimap) {
+    // Synchronizing on multimap, not values!
+    // Must be in synchronized block
+    Iterator<V> i = values.iterator();
+    while (i.hasNext()) {
+        foo(i.next());
+    }
+}
+Verdict: Synchronizing on a local variable multimap
+File: guava\guava-tests\test\com\google\common\collect\MultimapsTest.java
+Class: MultimapsTest
+Method: private static void foo(Object o)
+Range: (line 981,col 27)-(line 981,col 34)
+Code: Object o
+Verdict: o is unused
+File: guava\guava-tests\test\com\google\common\eventbus\StringCatcher.java
+Class: StringCatcher
+Method: public void methodWithoutAnnotation(@Nullable String string)
+Range: (line 40,col 39)-(line 40,col 61)
+Code: @Nullable String string
+Verdict: string is unused
+File: guava\guava-tests\test\com\google\common\eventbus\SubscriberTest.java
+Class: SubscriberTest
+Method: public void threadSafeMethod(Object arg)
+Range: (line 141,col 32)-(line 141,col 41)
+Code: Object arg
+Verdict: arg is unused
+File: guava\guava-tests\test\com\google\common\math\DoubleMathTest.java
+Class: DoubleMathTest
+Method: public void testRoundLog2Half()
+Range: (line 396,col 9)-(line 402,col 9)
+Code: if (exp < 0) {
+    assertEquals(exp + 1, DoubleMath.log2(x, mode));
+    assertEquals(exp, DoubleMath.log2(y, mode));
+} else {
+    assertEquals(exp + 1, DoubleMath.log2(x, mode));
+    assertEquals(exp, DoubleMath.log2(y, mode));
+}
+Verdict: Equivalent if branches
